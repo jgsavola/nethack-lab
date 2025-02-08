@@ -1,0 +1,9 @@
+services:
+  nethack:
+    build: .
+    container_name: nethack-console
+    volumes:
+      - ./nethack_saves:/root/.nethack  # Bind mount the host directory to the container
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
